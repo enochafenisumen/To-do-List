@@ -14,26 +14,26 @@
 				<div id="clock-el"></div>
 			</header>
 
-			<button id="add-btn" title="Click to Add new Task">+ Add New Task</button>
-
-			<form id="inputs-ctn">
-				<button id="cancel-btn" title="Close">✖</button>
+			<div id="add-ctn">
+				<button id="add-btn" title="Click to Add new Task">+ Add New Task</button>
+				<form id="inputs-ctn">
+					<button id="cancel-btn" title="Close">✖</button>
 				
-				<label for="event">Enter Task Name:</label>
-				<input type="text" name="event" id="event" placeholder="Task Name..." required>
-
-				<div>
+					<label for="event">Enter Task Name:</label>
+					<input type="text" name="event" id="event" placeholder="Task Name..." required>
 					<div>
-						<label for="date">Select Date:</label><br>
-						<input type="date" name="date" id="date" required>
+						<div>
+							<label for="date">Select Date:</label><br>
+							<input type="date" name="date" id="date" required>
+						</div>
+						<div>
+							<label for="time">Select Time</label><br>
+							<input type="time" name="time" id="time" required>
+						</div>
 					</div>
-					<div>
-						<label for="time">Select Time</label><br>
-						<input type="time" name="time" id="time" required>
-					</div>
-				</div>
-				<button id="save-btn">Save Event</button>
-			</form>
+					<button id="save-btn">Save Event</button>
+				</form>
+			</div>
 			<div id="events-ctn"></div>
 		</main>
 

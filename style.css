@@ -58,7 +58,7 @@ header h1 {
 	transition: all .1s;
 }
 
-main {
+#add-ctn {
 	position: relative;
 }
 
@@ -148,7 +148,7 @@ main {
 	padding: 20px;
 	border: 2px solid rgba(116, 116, 116, 0.89);
 	border-radius: 25px;
-	top: 140px;
+	top: 40px;
 	color: blue;
 	box-shadow: 15px 20px 20px #00000088;
 	flex-direction: column;
@@ -227,11 +227,9 @@ footer {
 	#clock-el {
 		transform: scale(0.7);
 		width: fit-content;
-		background-color: #d1d1d1;
+		background: none;
 		font-weight: 400;
+		margin: 0;
+		padding: 0;
 	}
-}
-
-* {
-	box-sizing: border-box;
 }

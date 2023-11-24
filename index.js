@@ -78,6 +78,9 @@ function display(arr) {
 			</div>
 		</div>` 
 	}
+	if (matchMedia('(max-width:600px)').matches) {
+		content = content.replace("ondblclick", "onclick")
+	}
 	eventsCtn.innerHTML = content
 }
 
