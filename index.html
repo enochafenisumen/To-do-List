@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>To-Do List</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<script src="index.js" defer></script>
+    </head>
+    <body>
+		<main>
+			<header>
+				<h1>To-Do Tasks</h1>
+				<div id="clock-el"></div>
+			</header>
+
+			<button id="add-btn" title="Click to Add new Task">+ Add New Task</button>
+
+			<form id="inputs-ctn">
+				<button id="cancel-btn" title="Close">✖</button>
+				
+				<label for="event">Enter Task Name:</label>
+				<input type="text" name="event" id="event" placeholder="Task Name..." required>
+
+				<div>
+					<div>
+						<label for="date">Select Date:</label><br>
+						<input type="date" name="date" id="date" required>
+					</div>
+					<div>
+						<label for="time">Select Time</label><br>
+						<input type="time" name="time" id="time" required>
+					</div>
+				</div>
+				<button id="save-btn">Save Event</button>
+			</form>
+			<div id="events-ctn"></div>
+		</main>
+
+		<footer><small id="footer"></small></footer>
+	</body>
+</html>
