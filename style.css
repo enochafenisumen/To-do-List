@@ -191,7 +191,7 @@ form input:focus {
 	background: rgb(255, 230, 234);
 }
 
-input#time {
+#time {
 	width: 120px;
 }
 
@@ -218,13 +218,16 @@ footer {
 }
 
 @media screen and (max-width: 380px) {
-	header {
-		flex-direction: column-reverse;
-	}
 	#inputs-ctn {
 		min-width: 300px;
 		transform: scale(0.9);
 		top: 170px;
 		right: 0;
+	}
+	#clock-el {
+		transform: scale(0.7);
+		width: fit-content;
+		background-color: #d1d1d1;
+		font-weight: normal;
 	}
 }
