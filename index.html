@@ -14,9 +14,13 @@
 				<h1>To-Do Tasks</h1>
 				<div id="clock-el"></div>
 			</header>
-
-			<div id="add-ctn">
+			
+			<div id="middle">
 				<button id="add-btn" title="Click to Add new Task">+ Add New Task</button>
+				<div id="undo-el" onclick="undoDel()"><span>Task Removed. Tap to Undo</span></div>
+			</div>
+
+			<div id="add-ctn">	
 				<form id="inputs-ctn">
 					<button id="cancel-btn" title="Close">✖</button>
 				
@@ -32,9 +36,13 @@
 							<input type="time" name="time" id="time" required>
 						</div>
 					</div>
+					
 					<button id="save-btn">Save Event</button>
 				</form>
 			</div>
+
+			
+
 			<div id="events-ctn"></div>
 		</main>
 

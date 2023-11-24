@@ -44,12 +44,18 @@ header h1 {
 	border-radius: 50px;
 }
 
+#middle {
+	display: flex;
+	justify-content: space-between;
+}
+
 #add-btn {
 	background: rgb(132, 224, 255);
 	border: none;
 	border-radius: 50px;
 	padding: 8px 16px;
-	border: 1px solid rgba(0, 0, 0, 0.315)
+	border: 1px solid rgba(0, 0, 0, 0.315);
+	font-size: 1.05em;
 }
 
 #add-btn:hover {
@@ -61,6 +67,95 @@ header h1 {
 #add-ctn {
 	position: relative;
 }
+
+
+
+#inputs-ctn {
+	display: none;
+	position: absolute;
+	width: 350px;
+	z-index: 99;
+	background: rgba(174, 180, 255, 0.99);
+	padding: 20px;
+	border: 2px solid rgba(116, 116, 116, 0.89);
+	border-radius: 25px;
+	top: 40px;
+	color: blue;
+	box-shadow: 15px 20px 20px #00000080;
+	flex-direction: column;
+	text-align: center;
+}
+
+#cancel-btn {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5em;
+	border-radius: 50%;
+	padding: 3px 8px;
+}
+
+#cancel-btn:hover {
+	background: #adadadb7;
+}
+
+form > div {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+form input {
+	outline: none;
+	border: none;
+	margin: 10px auto;
+	width: 90%;
+	padding: 10px 15px;
+	border-radius: 100px;
+	background: #fff8;
+}
+
+form input:focus {
+	background: rgb(255, 230, 234);
+}
+
+#time {
+	width: 120px;
+}
+
+#save-btn {
+	display: block;
+	margin: 10px auto 0;
+	width: 40%;
+	background: rgb(255, 184, 184);
+	border: none;
+	padding: 8px;
+	border-radius: 100px;
+	color: rgb(0, 17, 255);
+	font-size: 1.01em;
+	text-shadow: 0 0 1px #0000003a;
+}
+
+#save-btn:hover {
+	transform: scale(1.05);
+}
+
+#undo-el {
+	max-width: 250px;
+	width: 35vw;
+	background: rgb(248, 213, 255);
+	padding: 10px 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 2px solid rgb(0, 17, 255);
+	box-shadow: 2px 2px 8px rgba(82, 80, 80, 0.533);
+	
+}
+
 
 #events-ctn {
 	display: flex;
@@ -139,79 +234,6 @@ header h1 {
 	box-shadow: 5px 5px 10px #00000057;
 }
 
-#inputs-ctn {
-	display: none;
-	position: absolute;
-	width: 350px;
-	z-index: 99;
-	background: rgba(174, 180, 255, 0.99);
-	padding: 20px;
-	border: 2px solid rgba(116, 116, 116, 0.89);
-	border-radius: 25px;
-	top: 40px;
-	color: blue;
-	box-shadow: 15px 20px 20px #00000088;
-	flex-direction: column;
-	text-align: center;
-}
-
-#cancel-btn {
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	background: none;
-	border: none;
-	color: white;
-	font-size: 1.5em;
-	border-radius: 50%;
-	padding: 3px 8px;
-}
-
-#cancel-btn:hover {
-	background: #adadadb7;
-}
-
-form > div {
-	margin-top: 10px;
-	display: flex;
-	justify-content: space-between;
-}
-
-form input {
-	outline: none;
-	border: none;
-	margin: 10px auto;
-	width: 90%;
-	padding: 10px 15px;
-	border-radius: 100px;
-	background: #fff8;
-}
-
-form input:focus {
-	background: rgb(255, 230, 234);
-}
-
-#time {
-	width: 120px;
-}
-
-#save-btn {
-	display: block;
-	margin: 10px auto 0;
-	width: 40%;
-	background: rgb(255, 184, 184);
-	border: none;
-	padding: 8px;
-	border-radius: 100px;
-	color: rgb(0, 17, 255);
-	font-size: 1.01em;
-	text-shadow: 0 0 1px #0000003a;
-}
-
-#save-btn:hover {
-	transform: scale(1.05);
-}
-
 footer {
 	text-align: center;
 	margin-bottom: 10px;
@@ -221,7 +243,6 @@ footer {
 	#inputs-ctn {
 		max-width: 100%;
 		left: 0px;
-		padding: 8px;
 		top: 50px;
 	}
 	#clock-el {
@@ -236,6 +257,15 @@ footer {
 		margin-top: 45px;
 	}
 }
+
+	@media all and (max-width: 374px) {
+		#inputs-ctn {
+			padding: 8px;
+		}
+		#cancel-btn {
+			font-size: 1em;
+		}
+	}
 
 * {
 	box-sizing: border-box;
