@@ -217,7 +217,7 @@ footer {
 	margin-bottom: 10px;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 600px) {
 	#inputs-ctn {
 		min-width: 300px;
 		transform: scale(0.9);
@@ -228,6 +228,10 @@ footer {
 		transform: scale(0.7);
 		width: fit-content;
 		background-color: #d1d1d1;
-		font-weight: normal;
+		font-weight: 400;
 	}
+}
+
+* {
+	box-sizing: border-box;
 }
