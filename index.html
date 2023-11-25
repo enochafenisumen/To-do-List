@@ -16,8 +16,14 @@
 			</header>
 			
 			<div id="middle">
-				<button id="add-btn" title="Click to Add new Task">+ Add New Task</button>
-				<div id="undo-el" onclick="undoDel()"><span>Task Removed. Tap to Undo</span></div>
+				<div><button id="add-btn" title="Click to Add new Task">+ Add New Task</button></div>
+				<div id="undo-ctn">
+					<div id="undo-el" onclick="undoDel()">
+						<span>Task Removed. Tap to Undo</span>
+					</div>
+					<button id="close-undo-btn" onclick="closeUndo()">✖</button>
+					
+				</div>
 			</div>
 
 			<div id="add-ctn">	
@@ -40,8 +46,6 @@
 					<button id="save-btn">Save Event</button>
 				</form>
 			</div>
-
-			
 
 			<div id="events-ctn"></div>
 		</main>

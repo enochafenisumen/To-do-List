@@ -5,9 +5,11 @@ const eventEl = document.getElementById("event")
 const dateEl = document.getElementById("date")
 const timeEl = document.getElementById("time")
 const saveBtn = document.getElementById("save-btn")
+const undoCtn = document.getElementById("undo-ctn")
 const inputsCtn = document.getElementById("inputs-ctn")
 const eventsCtn = document.getElementById("events-ctn")
-const savedEvents = JSON.parse(localStorage.getItem("savedEvents") )
+const savedEvents = JSON.parse(localStorage.getItem("savedEvents"))
+const deletedEvents = []
 
 function displayTime() {
 	let currentDate = new Date()
@@ -32,14 +34,14 @@ addBtn.addEventListener("click", function(){showInputs()})
 saveBtn.addEventListener("click", function(){saveEvent()})
 cancelBtn.addEventListener("click", function(){closeInputs()})
 
-const showInputs = () => inputsCtn.style = "display: flex"
-const closeInputs = () => inputsCtn.style = "display: none"
-
-function deleteEvent(index) {
-	events.splice(index, 1)
-	localStorage.setItem("savedEvents", JSON.stringify(events))
-	display(events)
+const showInputs = () => inputsCtn.style = "display: flex; visibility: visible; opacity: 1"
+const closeInputs = () => inputsCtn.style = "display: none; visibility: hidden; opacity: 0"
+const showUndo = () => {
+	undoCtn.style = "display: initial; visibility: visible; opacity: 1"
+	setTimeout(closeUndo, 3500)
 }
+
+const closeUndo = () => undoCtn.style = "display: none; visibility: hidden; opacity: 0"
 
 if (savedEvents) {
 	events.push(...savedEvents)
@@ -62,6 +64,21 @@ function saveEvent() {
 		closeInputs()
 		display(events)
 	}
+}
+
+function deleteEvent(index) {
+	deletedEvents.unshift({ev: events[index], in: index})
+	events.splice(index, 1)
+	localStorage.setItem("savedEvents", JSON.stringify(events))
+
+	display(events)
+	showUndo()
+}
+
+function undoDel() {
+	events.splice(deletedEvents[0].in, 0, deletedEvents[0].ev)
+	display(events)
+	closeUndo()
 }
 
 function display(arr) {

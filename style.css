@@ -47,15 +47,16 @@ header h1 {
 #middle {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 #add-btn {
 	background: rgb(132, 224, 255);
 	border: none;
 	border-radius: 50px;
-	padding: 8px 16px;
+	padding: 10px 16px;
 	border: 1px solid rgba(0, 0, 0, 0.315);
-	font-size: 1.05em;
+	font-size: 1.03em;
 }
 
 #add-btn:hover {
@@ -67,8 +68,6 @@ header h1 {
 #add-ctn {
 	position: relative;
 }
-
-
 
 #inputs-ctn {
 	display: none;
@@ -84,6 +83,7 @@ header h1 {
 	box-shadow: 15px 20px 20px #00000080;
 	flex-direction: column;
 	text-align: center;
+	transition: all .5s;
 }
 
 #cancel-btn {
@@ -143,24 +143,41 @@ form input:focus {
 	transform: scale(1.05);
 }
 
+#undo-ctn {
+	position: relative;
+	display: none;
+	transition: all .5s
+}
+
 #undo-el {
 	max-width: 250px;
 	width: 35vw;
 	background: rgb(248, 213, 255);
-	padding: 10px 15px;
+	padding: 15px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	border: 2px solid rgb(0, 17, 255);
 	box-shadow: 2px 2px 8px rgba(82, 80, 80, 0.533);
-	
 }
 
+#close-undo-btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: none;
+	border: none;
+	color: black;
+	font-size: 1em;
+	border-radius: 50%;
+	padding: 3px 8px;
+	cursor: default;
+}
 
 #events-ctn {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 20px;
+	transition: all .5s
 }
 
 .events {
@@ -232,6 +249,16 @@ form input:focus {
 .events:hover {
 	transform: scale(1.03);
 	box-shadow: 5px 5px 10px #00000057;
+}
+
+button, #undo-ctn {
+	cursor: pointer;
+}
+
+.hidden {
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s ease-in-out;
 }
 
 footer {
