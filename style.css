@@ -270,18 +270,18 @@ footer {
 	#inputs-ctn {
 		max-width: 100%;
 		left: 0px;
-		top: 50px;
+		top: 45px;
 	}
 	#clock-el {
 		transform: scale(0.8);
 		width: fit-content;
 		background: none;
 		font-weight: 400;
-		margin: 0;
+		margin: 10px 0 0;
 		padding: 0;
 	}
 	h1 {
-		margin-top: 45px;
+		margin-top: 50px;
 	}
 }
 
