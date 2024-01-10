@@ -2,9 +2,10 @@ html {
 	margin: 0;
 	box-sizing: border-box;
 	min-height: 100vh;
-	background: linear-gradient(rgb(255, 213, 220), rgb(137, 137, 255));
+	/* background: linear-gradient(rgb(255, 213, 220), rgb(137, 137, 255));
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover; */
+	background: #e6e6e6;
 }
 
 body {
@@ -13,6 +14,11 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	/* padding: 0 20px; */
+	position: relative;
+}
+
+main {
 	padding: 0 20px;
 }
 
@@ -32,7 +38,7 @@ header h1 {
 	font-size: 2.5em;
 }
 
-#clock-el {
+#date-el {
 	font-size: 1.8em;
 	font-weight: bold;
 	background-color: #adadad56;
@@ -65,12 +71,11 @@ header h1 {
 	transition: all .1s;
 }
 
-#add-ctn {
+/* #add-ctn {
 	position: relative;
-}
+} */
 
-#inputs-ctn {
-	display: none;
+dialog {
 	position: absolute;
 	width: 350px;
 	z-index: 99;
@@ -78,7 +83,6 @@ header h1 {
 	padding: 20px;
 	border: 2px solid rgba(116, 116, 116, 0.89);
 	border-radius: 25px;
-	top: 40px;
 	color: blue;
 	box-shadow: 15px 20px 20px #00000080;
 	flex-direction: column;
@@ -122,9 +126,9 @@ form input:focus {
 	background: rgb(255, 230, 234);
 }
 
-#time {
+/* #time {
 	width: 120px;
-}
+} */
 
 #save-btn {
 	display: block;
@@ -173,7 +177,48 @@ form input:focus {
 	cursor: default;
 }
 
-#events-ctn {
+/* #top-section {
+	position: fixed;
+	height: 25vh;
+} */
+
+#dialog-ctn {
+	display: none;
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: #000b;
+}
+
+dialog {
+	display: initial;
+	width: 300px;
+	position: absolute;
+	margin-top: 30vh;
+}
+
+#tasks-ctn {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.task {
+	padding: 8px 10px;
+	margin: 5px;
+	border: 1px solid blue;
+	border-radius: 8px;
+	background: rgb(216, 216, 253);
+	box-shadow: 2px 2px 2px rgba(39, 39, 39, 0.533);
+}
+
+header {
+	margin: 0;
+}
+
+/* #events-ctn {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 20px;
@@ -249,16 +294,10 @@ form input:focus {
 .events:hover {
 	transform: scale(1.03);
 	box-shadow: 5px 5px 10px #00000057;
-}
+} */
 
 button, #undo-ctn {
 	cursor: pointer;
-}
-
-.hidden {
-	opacity: 0;
-	visibility: hidden;
-	transition: all .5s ease-in-out;
 }
 
 footer {
@@ -272,16 +311,21 @@ footer {
 		left: 0px;
 		top: 45px;
 	}
-	#clock-el {
-		transform: scale(0.8);
-		width: fit-content;
+	#date-el {
+		/* transform: scale(0.8); */
 		background: none;
 		font-weight: 400;
-		margin: 10px 0 0;
+		padding: 0;
+		width: fit-content;
+		display: block;
+		margin-left: auto;
+		font-size: 1em;
 		padding: 0;
 	}
+
 	h1 {
-		margin-top: 50px;
+		margin: 0 0 20px 0;
+		padding: 0;
 	}
 }
 

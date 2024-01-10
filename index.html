@@ -6,33 +6,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="style.css">
 		<link rel="icon" href="sketch-3-todo-list-app-icon-template.jpg">
-		<script src="index.js" defer></script>
+		<script src="new.js" defer></script>
     </head>
     <body>
 		<main>
-			<header>
-				<h1>To-Do Tasks</h1>
-				<div id="clock-el"></div>
-			</header>
-			
-			<div id="middle">
-				<div><button id="add-btn" title="Click to Add new Task">+ Add New Task</button></div>
-				<div id="undo-ctn">
-					<div id="undo-el" onclick="undoDel()">
-						<span>Task Removed. Tap to Undo</span>
+			<div id="top-section">
+				<div id="date-el"></div>
+				<header>
+					<h1>To-Do Tasks</h1>
+					<!-- <div id="date-el"></div> -->
+				</header>
+				
+				<div id="middle">
+					<div><button id="add-btn" title="Click to Add new Task">+ Add New Task</button></div>
+					<div id="undo-ctn">
+						<div id="undo-el" onclick="undoDel()">
+							<span>Task Removed. Tap to Undo</span>
+						</div>
+						<button id="close-undo-btn" onclick="closeUndo()">✖</button>
+				
 					</div>
-					<button id="close-undo-btn" onclick="closeUndo()">✖</button>
-					
 				</div>
 			</div>
 
-			<div id="add-ctn">	
-				<form id="inputs-ctn">
+			<div id="tasks-ctn"></div>
+		</main>
+
+		<div id="dialog-ctn">
+			<dialog id="inputs-ctn">
+				<form>
 					<button id="cancel-btn" title="Close">✖</button>
-				
-					<label for="event">Enter Task Name:</label>
-					<input type="text" name="event" id="event" placeholder="Task Name..." required>
-					<div>
+			
+					<label for="task">Enter Task Name:</label>
+					<input type="text" name="task" id="task" placeholder="Task Name..." required>
+					<!-- <div>
 						<div>
 							<label for="date">Select Date:</label><br>
 							<input type="date" name="date" id="date" required>
@@ -41,14 +48,12 @@
 							<label for="time">Select Time</label><br>
 							<input type="time" name="time" id="time" required>
 						</div>
-					</div>
-					
-					<button id="save-btn">Save Event</button>
+					</div> -->
+			
+					<button id="save-btn">Save Task</button>
 				</form>
-			</div>
-
-			<div id="events-ctn"></div>
-		</main>
+			</dialog>
+		</div>
 
 		<footer><small id="footer"></small></footer>
 	</body>
